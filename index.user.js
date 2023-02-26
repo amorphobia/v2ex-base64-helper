@@ -2,7 +2,7 @@
 // @name         V2EX Base64 Helper
 // @name:zh-CN   V2EX Base64 助手
 // @namespace    https://github.com/amorphobia/v2ex-base64-helper
-// @version      0.6.1
+// @version      0.6.2
 // @description  Base64 auto decoding, reply with base64 encoded
 // @description:zh-CN  Base64 自动解码，用 base64 编码回复
 // @author       Hinnka, amorphobia
@@ -12,6 +12,8 @@
 // @require      https://cdn.jsdelivr.net/npm/js-base64@3.4.5
 // @grant        none
 // ==/UserScript==
+
+/* globals Base64 */
 
 (function() {
     'use strict';
@@ -69,20 +71,32 @@
     }
 
     var replyTextArea = document.getElementById("reply_content");
-    var buttonRow = replyTextArea.nextElementSibling;
-    var form = buttonRow ? buttonRow.parentElement : null;
-    if (form) {
+    if (replyTextArea) {
+        var form = replyTextArea.parentElement;
         var base64ReplyFunc = function() {
             replyTextArea.value = Base64.encode(replyTextArea.value);
             form.submit();
         };
-        var replyButton = buttonRow.querySelector("input");
-        var div = document.createElement("div");
-        div.appendChild(replyButton);
-        var template = document.createElement("template");
-        template.innerHTML = '<input type="button" id="base64Reply" value="Base64 回复" class="super normal button" style="margin-left: 10px"></input>';
-        div.appendChild(template.content.firstChild);
-        buttonRow.prepend(div);
+        var b64Button = document.createElement("input");
+        b64Button.setAttribute("id", "base64Reply");
+        b64Button.setAttribute("type", "button");
+        b64Button.setAttribute("class", "super normal button");
+        b64Button.setAttribute("value", "Base64 回复");
+        var buttonRow = form.querySelector("div.flex-one-row");
+        if (buttonRow) {
+            var replyButton = buttonRow.querySelector("input.super.normal.button");
+            var div = document.createElement("div");
+            div.appendChild(replyButton);
+            b64Button.setAttribute("style", "margin-left: 10px;");
+            div.appendChild(b64Button);
+            buttonRow.prepend(div);
+        } else {
+            var sep = document.createElement("div");
+            sep.setAttribute("class", "sep");
+            form.appendChild(sep);
+            b64Button.setAttribute("style", "width: 100%; line-height: 20px;");
+            form.appendChild(b64Button);
+        }
         var base64Reply = document.getElementById("base64Reply");
         if(base64Reply) {
             base64Reply.onclick = base64ReplyFunc;
