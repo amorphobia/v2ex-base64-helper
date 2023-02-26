@@ -16,7 +16,20 @@
 (function() {
     'use strict';
 
-    var blacklist = ["bilibili", "Bilibili", "MyTomato", "InDesign", "Encrypto", "encrypto", "Window10", "USERNAME", "airpords", "Windows7"];
+    var blacklist = [
+        "bilibili",
+        "Bilibili",
+        "MyTomato",
+        "InDesign",
+        "Encrypto",
+        "encrypto",
+        "Window10",
+        "USERNAME",
+        "airpords",
+        "Windows7",
+        "RAVPOWER",
+        "Synology"
+    ];
 
     var reg = /[A-z0-9+/=]+/g;
 
