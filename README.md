@@ -1,7 +1,9 @@
-# v2ex-base64-decoder
+# V2EX Base64 助手
 
-v2ex base64自动解码油猴脚本
+自动解码
 
-https://greasyfork.org/zh-CN/scripts/408911-v2ex-base64-decode
+![](https://raw.githubusercontent.com/amorphobia/v2ex-base64-helper/master/screenshot.png)
 
-![](https://raw.githubusercontent.com/bjzhou/v2ex-base64-decoder/master/screenshot.png)
+Base64 回复
+
+![](https://raw.githubusercontent.com/amorphobia/v2ex-base64-helper/master/replyrecord.gif)
