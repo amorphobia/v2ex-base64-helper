@@ -19,20 +19,22 @@
     'use strict';
 
     var blacklist = [
+        "airpords",
         "bilibili",
         "Bilibili",
-        "MyTomato",
-        "InDesign",
+        "Emphasis",
+        "emphasis",
         "Encrypto",
         "encrypto",
-        "Window10",
-        "USERNAME",
-        "airpords",
-        "Windows7",
+        "Exchange",
+        "exchange",
+        "InDesign",
+        "MyTomato",
         "RAVPOWER",
         "Synology",
-        "Emphasis",
-        "emphasis"
+        "USERNAME",
+        "Window10",
+        "Windows7",
     ];
 
     var reg = /[A-z0-9+/=]+/g;
