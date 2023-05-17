@@ -2,7 +2,7 @@
 // @name         V2EX Base64 Helper
 // @name:zh-CN   V2EX Base64 助手
 // @namespace    https://github.com/amorphobia/v2ex-base64-helper
-// @version      0.6.5
+// @version      0.6.6
 // @description  Base64 auto decoding, reply with base64 encoded
 // @description:zh-CN  Base64 自动解码，用 base64 编码回复
 // @author       Hinnka, amorphobia
@@ -47,6 +47,10 @@
         "Windows7",
     ];
 
+    const prefixBlacklist = [
+        "deepin",
+    ];
+
     var reg = /[A-z0-9+/=]+/g;
 
     var replaceContent = function(el) {
@@ -62,6 +66,13 @@
             }
             if (blacklist.includes(str)) {
                 return str;
+            }
+            if (str.length == 8) {
+                for (const prefix of prefixBlacklist) {
+                    if (str.startsWith(prefix)) {
+                        return str;
+                    }
+                }
             }
             try {
                 return `${str}<span style="color:#EE6F2D"><xmp style="display:inline;white-space:pre-wrap;word-wrap:break-word;">(${unescape(Base64.decode(str).replace(/\r?\n?/g, '').trim())})</xmp></span>`;
