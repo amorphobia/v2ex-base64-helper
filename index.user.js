@@ -38,6 +38,7 @@
         "Question",
         "RAVPOWER",
         "Reaction",
+        "Semester",
         "Synology",
         "TRANSFER",
         "USERNAME",
