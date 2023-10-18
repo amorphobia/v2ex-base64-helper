@@ -2,7 +2,7 @@
 // @name         V2EX Base64 Helper
 // @name:zh-CN   V2EX Base64 助手
 // @namespace    https://github.com/amorphobia/v2ex-base64-helper
-// @version      0.6.6
+// @version      0.6.7
 // @description  Base64 auto decoding, reply with base64 encoded
 // @description:zh-CN  Base64 自动解码，用 base64 编码回复
 // @author       Hinnka, amorphobia
@@ -23,6 +23,7 @@
         "airpords",
         "bilibili",
         "Bilibili",
+        "BiliBili",
         "CRITICAL",
         "Emphasis",
         "emphasis",
