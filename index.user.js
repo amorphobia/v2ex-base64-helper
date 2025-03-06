@@ -25,6 +25,8 @@
         "Bilibili",
         "BiliBili",
         "CRITICAL",
+        "Demonzdy",
+        "demonzdy",
         "Emphasis",
         "emphasis",
         "Encrypto",
