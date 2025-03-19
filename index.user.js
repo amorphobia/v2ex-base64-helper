@@ -36,6 +36,8 @@
         "exchange",
         "InDesign",
         "INSTANCE",
+        "INStance",
+        "Instance",
         "MyTomato",
         "PRESSURE",
         "Question",
