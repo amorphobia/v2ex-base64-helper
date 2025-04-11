@@ -19,6 +19,8 @@
     'use strict';
 
     var blacklist = [
+        "[Window]",
+        "[Windows",
         "ADVENTUR",
         "airpords",
         "bilibili",
