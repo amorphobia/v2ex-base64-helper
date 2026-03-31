@@ -98,13 +98,15 @@
         });
     };
 
-    var topicContent = document.getElementsByClassName("topic_content")[0];
+    var topicContent = document.getElementsByClassName("topic_content");
     if (topicContent) {
-        replaceContent(topicContent);
+        for (var i = 0; i < topicContent.length; i++) {
+            replaceContent(topicContent[i]);
+        }
     }
     var replyContent = document.getElementsByClassName("reply_content");
     if (replyContent) {
-        for (var i = 0; i < replyContent.length; i++) {
+        for (i = 0; i < replyContent.length; i++) {
             replaceContent(replyContent[i]);
         }
     }
