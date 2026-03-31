@@ -2,7 +2,7 @@
 // @name         V2EX Base64 Helper
 // @name:zh-CN   V2EX Base64 助手
 // @namespace    https://github.com/amorphobia/v2ex-base64-helper
-// @version      0.6.8
+// @version      0.6.9
 // @description  Base64 auto decoding, reply with base64 encoded
 // @description:zh-CN  Base64 自动解码，用 base64 编码回复
 // @author       Hinnka, amorphobia
@@ -118,20 +118,21 @@
             replyTextArea.value = Base64.encode(replyTextArea.value);
             form.submit();
         };
-        var b64Button = document.createElement("input");
-        b64Button.setAttribute("id", "base64Reply");
-        b64Button.setAttribute("type", "button");
-        b64Button.setAttribute("class", "super normal button");
-        b64Button.setAttribute("value", "Base64 回复");
+        var b64Button;
         var buttonRow = form.querySelector("div.flex-one-row");
         if (buttonRow) {
-            var replyButton = buttonRow.querySelector("input.super.normal.button");
-            var div = document.createElement("div");
-            div.appendChild(replyButton);
-            b64Button.setAttribute("style", "margin-left: 10px;");
-            div.appendChild(b64Button);
-            buttonRow.prepend(div);
+            b64Button = document.createElement("button");
+            b64Button.setAttribute("id", "base64Reply");
+            b64Button.setAttribute("class", "super normal button");
+            b64Button.setAttribute("type", "submit");
+            b64Button.innerHTML = "Base64 回复";
+            buttonRow.prepend(b64Button);
         } else {
+            b64Button = document.createElement("input");
+            b64Button.setAttribute("id", "base64Reply");
+            b64Button.setAttribute("type", "button");
+            b64Button.setAttribute("class", "super normal button");
+            b64Button.setAttribute("value", "Base64 回复");
             var sep = document.createElement("div");
             sep.setAttribute("class", "sep");
             form.appendChild(sep);
